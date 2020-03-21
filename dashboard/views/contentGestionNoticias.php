@@ -3,6 +3,8 @@
     <?php
         include("controllers/noticiasController.php");
         include("controllers/imagenesController.php");
+
+        $dir = "location:index.php?sec=GestorNoticias";
         
         $editorJefe = false;
         $redactor = false;
@@ -79,7 +81,7 @@
             
             $result = $not2->incluirNoticia($tituloP, $titulo, $subtitulo, $entradilla, $cuerpo, $imagen, $imagenCuerpo, $video, $idAutor, $hoy, $etiqueta, $idSeccion);
             
-            header("location:index.php?sec=GestorNoticias");
+            header($dir);
             
         }else if (isset($_POST['modificarFinal'])) {  
             
@@ -142,7 +144,7 @@
             
             $result = $not2->modificarNoticia($idNoticia, $tituloP, $titulo, $subtitulo, $entradilla, $cuerpo, $imagen, $imagenCuerpo, $video, $idAutor, $hoy, $etiqueta, $idSeccion);
             
-            header("location:index.php?sec=GestorNoticias");
+            header($dir);
             
         }else if(isset($_POST['modificarNoticia'])){
             
@@ -272,7 +274,9 @@
             
             if($estado == 'Publicado'){
                 $estado = 'Pendiente';
-            }else $estado = 'Publicado';
+            } else {
+                $estado = 'Publicado';
+            }
             
             $date = getdate();
 
@@ -287,7 +291,7 @@
             
             $result = $not2->modificarEstadoNoticia($idNoticia, $estado, $hoy);
             
-            header("location:index.php?sec=GestorNoticias");
+            header($dir);
             
         }else if(isset($_POST['eliminarNoticia'])){
             
@@ -295,7 +299,7 @@
             
             $result = $not2->eliminarNoticia($idNoticia);
             
-            header("location:index.php?sec=GestorNoticias");
+            header($dir);
             
         }else if(isset($_POST['incluirNoticia'])){   
     ?>

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <!-- Autores -->
     <!-- Guillermo Hueli Campos -->
     <!-- Alejandro García Vallecillo -->

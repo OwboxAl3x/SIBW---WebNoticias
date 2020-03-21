@@ -1,9 +1,8 @@
 <?php
 //Llamada al modelo
-//include("models/noticiasModel.php");
-$not=new noticiasModel();
-$not1=new noticiasModel();
-$not2=new noticiasModel();
+$not=new NoticiasModel();
+$not1=new NoticiasModel();
+$not2=new NoticiasModel();
 
 
 $datosNoticias=$not->getNoticiasPublicadas();

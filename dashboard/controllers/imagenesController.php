@@ -1,9 +1,9 @@
 <?php
 //Llamada al modelo
 include("models/imagenesModel.php");
-$img=new imagenesModel();
-$img1=new imagenesModel();
-$img2=new imagenesModel();
+$img=new ImagenesModel();
+$img1=new ImagenesModel();
+$img2=new ImagenesModel();
 $datosImagenes=$img->getImagenes();
  
 //Llamada a la vista

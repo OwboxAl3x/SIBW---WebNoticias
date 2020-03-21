@@ -32,11 +32,13 @@
             function getRealIP()
             {
 
-                if (!empty($_SERVER['HTTP_CLIENT_IP']))
+                if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
                     return $_SERVER['HTTP_CLIENT_IP'];
+                }
 
-                if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+                if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
                     return $_SERVER['HTTP_X_FORWARDED_FOR'];
+                }
 
                 return $_SERVER['REMOTE_ADDR'];
 
@@ -267,7 +269,7 @@
 
             <ul>
                 <li>
-                    <INPUT class="btnComment" type="image" src="./imagenes/coments.png" value="" onClick="Desplegar()"/>
+                    <INPUT class="btnComment" type="image" alt="Comentarios" src="./imagenes/coments.png" value="" onClick="Desplegar()"/>
                 </li>
 
                 <div id="comentarios">
@@ -324,10 +326,10 @@
                 </div>
 
                 <li>
-                    <INPUT class="twitter" type="image" src="./imagenes/Twitter.png" value="" onClick="popUp('<?php echo $datosNoticiaIndividual[0]["Titulo"] ?>','<?php echo  $datosNoticiaIndividual[0]["Nombre"] ?>','Twitter')"/>
+                    <INPUT class="twitter" type="image" alt="Twitter" src="./imagenes/Twitter.png" value="" onClick="popUp('<?php echo $datosNoticiaIndividual[0]["Titulo"] ?>','<?php echo  $datosNoticiaIndividual[0]["Nombre"] ?>','Twitter')"/>
                 </li>
                 <li>
-                    <INPUT class="Facebook" type="image" src="./imagenes/Facebook.png" value="" onClick="popUp('<?php echo $datosNoticiaIndividual[0]["Titulo"] ?>','<?php echo  $datosNoticiaIndividual[0]["Nombre"] ?>','Facebook')"/>
+                    <INPUT class="Facebook" type="image" alt="Facebook" src="./imagenes/Facebook.png" value="" onClick="popUp('<?php echo $datosNoticiaIndividual[0]["Titulo"] ?>','<?php echo  $datosNoticiaIndividual[0]["Nombre"] ?>','Facebook')"/>
                 </li>
                 <li>
                     <?php

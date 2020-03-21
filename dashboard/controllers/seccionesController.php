@@ -1,13 +1,13 @@
 <?php
 //Llamada al modelo
 include("models/seccionesModel.php");
-$seccion=new seccionesModel();
-$seccion1=new seccionesModel();
-$seccion2=new seccionesModel();
-$seccion3=new seccionesModel();
-$seccion4=new seccionesModel();
-$seccion5=new seccionesModel();
-$seccion6=new seccionesModel();
+$seccion=new SeccionesModel();
+$seccion1=new SeccionesModel();
+$seccion2=new SeccionesModel();
+$seccion3=new SeccionesModel();
+$seccion4=new SeccionesModel();
+$seccion5=new SeccionesModel();
+$seccion6=new SeccionesModel();
 $datosSecciones=$seccion->getSecciones();
  
 //Llamada a la vista

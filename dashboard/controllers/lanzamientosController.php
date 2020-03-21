@@ -1,7 +1,7 @@
 <?php
 //Llamada al modelo
 include("models/lanzamientosModel.php");
-$lan=new lanzamientosModel();
+$lan=new LanzamientosModel();
 $datosLanzamientos=$lan->getLanzamientos();
  
 //Llamada a la vista

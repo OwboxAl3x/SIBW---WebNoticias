@@ -1,7 +1,9 @@
 <div id="content">
     <div id="funciones">
     <?php
-    
+
+        $dir = "location:index.php?sec=GestorSecciones";
+
         echo
         "<p class='seccion'>" . $seccion . "</p>";
         
@@ -26,13 +28,13 @@
             
             $result = $seccion3->incluirSeccion($nombreSec, $padreSec);
             
-            header("location:index.php?sec=GestorSecciones");
+            header($dir);
             
         }else if(isset($_POST['eliminarSeccion'])){
             
             $result = $seccion3->eliminarSeccion($_POST['eliminarSeccion']);
             
-            header("location:index.php?sec=GestorSecciones");
+            header($dir);
             
         }else if(isset($_POST['incluirSubseccion'])){
             
@@ -55,7 +57,7 @@
               
             $result = $seccion3->incluirSeccion($nombreSec, $idPadre);
             
-            header("location:index.php?sec=GestorSecciones");
+            header($dir);
             
         }else if(isset($_POST['modificarSeccion'])){
             
@@ -103,7 +105,7 @@
             
             $result = $seccion4->modificarSeccion($idSecc, $nombreSec, $idPadre);
             
-            header("location:index.php?sec=GestorSecciones");
+            header($dir);
         }
         
     ?>
@@ -119,13 +121,6 @@
     <div id="listaComentarios">
     <?php
         foreach($datosSecciones as $secc){
-            
-//            if($secc["Padre"]!=0){ 
-//                $datosSiHayPadre = $seccion6->getSeccionById($secc["Padre"]);
-//                $nombreSiHayPadre = $datosSiHayPadre[0]['Nombre']." / ";
-//            }else{
-//                $nombreSiHayPadre = "";
-//            }
             
             echo 
                 "<ul>

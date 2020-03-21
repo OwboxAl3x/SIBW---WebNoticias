@@ -1,9 +1,9 @@
 <?php
 //Llamada al modelo
 include("models/usuariosModel.php");
-$usuario=new usuariosModel();
-$usuario1=new usuariosModel();
-$usuario2=new usuariosModel();
-$usuario3=new usuariosModel();
+$usuario=new UsuariosModel();
+$usuario1=new UsuariosModel();
+$usuario2=new UsuariosModel();
+$usuario3=new UsuariosModel();
 
 ?>

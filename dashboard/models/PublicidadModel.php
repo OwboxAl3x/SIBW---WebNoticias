@@ -1,5 +1,5 @@
 <?php
-class publicidadModel{
+class PublicidadModel{
     private $db;
     private $publicidad;
  

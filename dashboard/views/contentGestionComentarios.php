@@ -2,6 +2,8 @@
     <div id="funciones">
     <?php
         include("controllers/comentariosController.php");
+
+        $dir = "location:index.php?sec=GestorComentarios";
     
         echo
         "<p class='seccion'>" . $seccion . "</p>";
@@ -13,8 +15,9 @@
             $texto = $_POST['texto'];
             $result = $comentario->modificarComentario($idComentario, $username, $email, $texto);
             
-            header("location:index.php?sec=GestorComentarios");
+            header($dir);
         }else if(isset($_POST['modificarComentario'])){
+            $username = $_POST['autor'];
     ?>
             <form id='comment3' method='POST' >
                 <table>
@@ -26,7 +29,7 @@
     <?php
                     echo "
                         <input type='hidden' name='idComentario' id='idComentario' value='".$_POST['idComentario']."'/>
-                        <td><input type='text' name='autor' id='autor' required placeholder='".$_POST['autor']."' value='".$_POST['autor']."'/></td>
+                        <td><input type='text' name='autor' id='autor' required placeholder='".$username."' value='".$username."'/></td>
     
                     </tr>
                     <tr>
@@ -49,7 +52,7 @@
         }else if(isset($_POST['eliminarComentario'])){
             $result = $comentario->eliminarComentario($_POST['eliminarComentario']);
             
-            header("location:index.php?sec=GestorComentarios");
+            header($dir);
         }else if(isset($_POST['enviar'])){
             $username = $_POST['autor'];
             $email = $_POST['email'];
@@ -57,15 +60,15 @@
 
             function getRealIP()
             {
-
-                if (!empty($_SERVER['HTTP_CLIENT_IP']))
+                if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
                     return $_SERVER['HTTP_CLIENT_IP'];
+                }
 
-                if (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+                if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
                     return $_SERVER['HTTP_X_FORWARDED_FOR'];
+                }
 
                 return $_SERVER['REMOTE_ADDR'];
-
             }
 
             $ip = getRealIP();
@@ -83,7 +86,7 @@
 
             $result = $comentario->insertComentario($ip, $username, $email, $hoy, $texto);
             
-            header("location:index.php?sec=GestorComentarios");
+            header($dir);
             
         }else if(isset($_POST['incluirComentario'])){   
     ?>

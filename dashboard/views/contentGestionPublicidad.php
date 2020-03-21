@@ -84,8 +84,6 @@
             
             $result = $publi1->modificarPublicidad($idPubli, $ruta, $url);
             
-            //header("location:index.php?sec=GestorPublicidad");
-            
         }
         
     ?>  

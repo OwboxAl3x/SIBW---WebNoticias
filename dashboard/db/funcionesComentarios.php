@@ -2,14 +2,14 @@
     function getProhibidas() {
         $conexion = Conectar::conexion();  
         
-        $prohibidas;
+        $prohibidas=[];
         
         $result = $conexion->query("SELECT * FROM prohibidas;");
         while($filas=$result->fetch_assoc()){
             $prohibidas[]=$filas;
         }
         
-        $palabraProhibida;
+        $palabraProhibida=[];
         
         foreach($prohibidas as $datoProhib){
             $palabraProhibida[] = $datoProhib['Palabra'];

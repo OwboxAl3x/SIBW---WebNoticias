@@ -11,7 +11,7 @@
  *
  * @author Alejandro
  */
-class comentariosModel {
+class ComentariosModel {
     private $db;
     private $comentarios;
  

@@ -1,9 +1,9 @@
 <?php
 //Llamada al modelo
 include("models/comentariosModel.php");
-$com=new comentariosModel();
+$com=new ComentariosModel();
 $datosComentarios=$com->getComentarios();
 
-$comentario=new comentariosModel();
+$comentario=new ComentariosModel();
 
 ?>

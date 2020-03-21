@@ -1,5 +1,5 @@
 <?php
-class noticiasModel{
+class NoticiasModel{
     private $db;
     private $noticias;
  

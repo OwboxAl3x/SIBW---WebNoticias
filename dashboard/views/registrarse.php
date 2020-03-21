@@ -1,8 +1,6 @@
 <div id="content">
     <div id="formularioLogin">
         <?php
-        
-            //include("controllers/usuariosController.php");
             
             $result = false;
         

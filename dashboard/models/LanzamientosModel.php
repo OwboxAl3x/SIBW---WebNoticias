@@ -1,5 +1,5 @@
 <?php
-class lanzamientosModel{
+class LanzamientosModel{
     private $db;
     private $lanzamientos;
  

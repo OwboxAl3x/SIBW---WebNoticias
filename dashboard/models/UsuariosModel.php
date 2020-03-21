@@ -1,5 +1,5 @@
 <?php
-class usuariosModel{
+class UsuariosModel{
     private $db;
     private $usuarios;
 
@@ -38,23 +38,26 @@ class usuariosModel{
     }
     
     public function registrar($username, $password) {
-        
+
+        $riturn = true;
+
         $consulta = $this->db->query("SELECT * FROM usuario WHERE NombreUsuario='".$username."'");
         if(!$consulta){
-            return false;
+            $riturn = false;
+        } else {
+
+            if($consulta->num_rows>0){
+                $riturn = false;
+            } else {
+                $consulta = $this->db->query("INSERT INTO usuario (ID, NombreUsuario, Contraseña, Privilegios) VALUES (NULL, '".$username."', '".$password."',0);");
+
+                if(!$consulta){
+                    $riturn = false;
+                }
+            }
         }
-        
-        if($consulta->num_rows>0){
-            return false;
-        }
-        
-        $consulta = $this->db->query("INSERT INTO usuario (ID, NombreUsuario, Contraseña, Privilegios) VALUES (NULL, '".$username."', '".$password."',0);");
-        
-        if(!$consulta){
-            return false;
-        }
-        
-        return true;
+
+        return $riturn;
     }
     
     public function buscar($username, $password) {

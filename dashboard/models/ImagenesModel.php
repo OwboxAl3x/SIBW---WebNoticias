@@ -1,5 +1,5 @@
 <?php
-class imagenesModel{
+class ImagenesModel{
     private $db;
     private $imagenes;
     private $imagen;

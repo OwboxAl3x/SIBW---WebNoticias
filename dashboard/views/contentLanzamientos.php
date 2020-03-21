@@ -3,7 +3,7 @@
         echo "<p class='seccion'>" . $seccion . "</p>";
     ?>
     <div id="lanzamientos">
-        <table border="0" rules="rows" id="tabla">
+        <table border="0" id="tabla">
             <tr id="nombres">
               <td id="fecha">Fecha</td>
               <td id="titulo">Titulo</td>

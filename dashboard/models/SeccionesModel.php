@@ -1,5 +1,5 @@
 <?php
-class seccionesModel{
+class SeccionesModel{
     private $db;
     private $secciones;
  

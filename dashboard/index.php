@@ -3,12 +3,12 @@ require("db/db.php");
 
 //Recupera sesion abierta
 session_start();
-include("models/noticiasModel.php");
+include("models/NoticiasModel.php");
 require("controllers/usuariosController.php");
 
 if(isset($_GET['q'])){
-    $notBuscadas=new noticiasModel();
-    $notBuscadasPublicadas=new noticiasModel();
+    $notBuscadas=new NoticiasModel();
+    $notBuscadasPublicadas=new NoticiasModel();
     $eJefe = false;
     
     if(isset($_SESSION['usuario'])){
@@ -22,10 +22,11 @@ if(isset($_GET['q'])){
     
     $q=$_GET['q'];
 
-    if($eJefe)
+    if($eJefe) {
         $result = $notBuscadas->getNoticiasLike($q);
-    else
+    } else {
         $result = $notBuscadas->getNoticiasPublicadasLike($q);
+    }
     
     foreach ($result as $titulo) {
         echo "<a class='enlaceBuscador' href='index.php?rel=". $titulo["Etiquetas"] ."&sec=Noticias&id=". $titulo["ID"] ."'>".$titulo['Titulo']."</a><hr/>";

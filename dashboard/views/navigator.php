@@ -20,22 +20,4 @@
         <li><div id="resultados"></div></li>
     </ul>
 </div>
-<?php
-
-//    if(!$_REQUEST['sec'] || ($_REQUEST['sec'] && $_GET['sec']=='Noticias')){
-?>
-<!--<div class="navSub">
-        <ul>-->
-            <?php
-//                foreach($datosSecciones as $datoSeccion) {
-//                    if($datoSeccion['Padre']==1){
-//                        echo "<li><a href=index.php?sec=Noticias&sub=" . $datoSeccion['Nombre'] . ">" . $datoSeccion['Nombre'] . "</a></li>";
-//                    }
-//                }
-            ?>
-<!--        </ul>
-</div>-->
-<?php
-//    }
-?>
 
